@@ -1,0 +1,62 @@
+/*
+ * Classic arXiv Red
+ * Restores the classic arXiv crimson header on the current design.
+ *
+ * The !important declarations are intentional: this extension's sole job is
+ * to override arXiv's own theme rules.
+ */
+
+:root {
+  --classic-arxiv-red: #b31b1b;
+  --classic-arxiv-red-dark: #8f1414;
+  --classic-arxiv-red-muted: #f2d5d5;
+}
+
+/* Current arXiv design system */
+header.ds-site-header,
+.ds-site-header {
+  background: var(--classic-arxiv-red) !important;
+}
+
+.ds-site-header-nav a,
+.ds-site-header-nav a:visited,
+.ds-site-header-nav button,
+.ds-site-header-nav-toggle {
+  color: var(--classic-arxiv-red-muted) !important;
+}
+
+.ds-site-header-nav a:hover,
+.ds-site-header-nav a:focus-visible,
+.ds-site-header-nav button:hover,
+.ds-site-header-nav button:focus-visible,
+.ds-site-header-nav-toggle:hover,
+.ds-site-header-nav-toggle:focus-visible {
+  background: var(--classic-arxiv-red-dark) !important;
+  color: #ffffff !important;
+}
+
+.ds-site-header-login {
+  color: #ffffff !important;
+}
+
+.ds-site-header-divider {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+@media (max-width: 599px) {
+  .ds-site-header.is-collapsible .ds-site-header-nav {
+    background: var(--classic-arxiv-red) !important;
+    border-top-color: rgba(255, 255, 255, 0.30) !important;
+  }
+
+  .ds-site-header.is-collapsible .ds-site-header-nav a,
+  .ds-site-header.is-collapsible .ds-site-header-nav button {
+    border-bottom-color: rgba(255, 255, 255, 0.25) !important;
+  }
+}
+
+/* Harmless fallback for older arXiv page templates */
+#header,
+.mobile-header {
+  background-color: var(--classic-arxiv-red) !important;
+}
